@@ -14,6 +14,13 @@
   </head>
 
   <body>
+    <div id="showalert" class="alert alert-success alert-dismissible fade " role="alert">
+      <strong>success!</strong> you successfully submited.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
 
     <div class="container">
       <h1 class="heading my-4">Enter your Details</h1>
@@ -27,10 +34,13 @@
           <input type="text" class="form-control " id="Username" placeholder="Enter Your Name">
           <small class="invalid-feedback">There is something wrong with this.</small>
         </div>
+
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" class="form-control" id="email" placeholder="Enter your Email">
+          <small class="invalid-feedback">your entered email wrong way</small>
         </div>
+
         <div class="form-group">
           <label for="cars">Select cars</label>
           <select class="form-control" id="cars">
@@ -41,15 +51,20 @@
             <option>ALTO</option>
           </select>
         </div>
+
         <div class="form-group">
           <label for="address">Enter your address details</label>
           <textarea class="form-control" id="address" rows="6"></textarea>
         </div>
+
         <div class="form-group">
           <label for="phone">Phone</label>
-          <input class="form-control" id="phone"></textarea>
+          <input class="form-control" id="phone">
+          <small class="invalid-feedback">Phone no. only be 10 digit.</small>
         </div>
-        <button class="btn btn-primary">SUBMIT</button>
+
+        <button id="submit" class="btn btn-primary">SUBMIT</button>
+
       </form>
 
     </div>

@@ -1,12 +1,12 @@
 console.log("Hello world");
 
-var element= document.createElement("name");
+var element= document.createElement("div");
 
 let text = document.createTextNode("this is the created text node.");
 element.appendChild(text);
 
-element.className('childul');
-element.id('a1');
+element.className = "childul";
+element.id = 'a1';
 element.setAttribute('style','background-color:red;')
 element.innerText = 'this is a paragraph.';
 
@@ -16,7 +16,7 @@ ul.appendChild(element);
 
 
 var paragraph = document.createElement("P");                
-var text = document.createTextNode("This is a paragraph.");     
+ text = document.createTextNode("This is a paragraph.");     
 paragraph.appendChild(text);
 
 console.log(paragraph);

@@ -26,6 +26,9 @@ let data = {
   last_name: 'Adams',
   job_title: 'Software Engineer'
 };
+
+
+//if data is string then we do not have to stringyfy the data;
 const options = {
   method: 'POST',
   body: JSON.stringify(data),
@@ -33,7 +36,20 @@ const options = {
     'Content-Type': 'application/json'
   }
 }
-fetch('https://reqres.in/api/users', options)
-  .then(res => res.json())
-  .then(res => console.log(res));
+
+
+fetch('https://reqres.in/api/users',options)
+  .then((response) =>{
+
+    return response.json();
+  })
+  .then((data) =>{
+    console.log(data);
+  })
+
+
 }
+
+
+//calling the api
+getApi();
