@@ -115,7 +115,29 @@ submit.addEventListener('click', () => {
     data = document.getElementById('requestJsonText').value;
   }
 
-  fetchApi();//we have to make the function
+  if(requestType == 'GET'){
+    fetch(inputLink,{
+      method : 'GET',
+    })
+    .then((response)=>response.text())
+      .then(text=>{
+      document.getElementById('responsePre').innerText = text;
+      // console.log(text);
+    })
+  }else{
+    fetch(inputLink, {
+      method : 'POST',
+      body : data,
+      headers : {
+        "Content-type": "application/json; charset=UTF-8"
+      },
+    })
+    .then(response=>response.text)
+    .then(v=>{
+      document.getElementById('responsePre').innerText = v;
+      // data = v;
+    })
+  }
 
 
 
@@ -123,7 +145,7 @@ submit.addEventListener('click', () => {
     console.log("The request type : " + requestType);
     console.log("The content type is : " + contentType);
     console.log("The data is :" + data);
-    document.getElementById('responsePrism').innerText = data;
+    // document.getElementById('responsePrism').innerText = data;
 
 
 })
